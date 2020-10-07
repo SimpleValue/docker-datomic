@@ -34,6 +34,25 @@ these steps:
     FROM simplevalue/datomic-pro-template:0.1.0
     CMD ["config/transactor.properties"]
 
+## Example dev-datomic
+
+This example shows how to start a Datomic transactor for your local
+development machine. It runs with Datomic's `dev` protocol, meaning
+all data will be stored on disk. Therefore you will keep the database
+state even when you restart your Clojure REPL (in comparison to
+Datomic's in-memory protocol). It also starts in a Docker container
+and uses the same network as your development machine, therefore you
+can access Datomic without defining a docker port mapping.
+
+To make it work, copy the dev-datomic folder into your project and
+fill in those gaps:
+
+- `dev-datomic/config/transactor.properties` enter your Datomic
+  `license-key`.
+
+- `dev-datomic/.credentials` enter the username and password you use
+  to log into https://my.datomic.com/
+
 ## Miscellany
 
 The Dockerfile **EXPOSES** port 4334. Datomic will reside in the

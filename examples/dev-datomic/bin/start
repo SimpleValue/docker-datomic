@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+. bin/prepare
+
+docker run -i --network host -v $PWD/data:/opt/datomic/data $TAG
