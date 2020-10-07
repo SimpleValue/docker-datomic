@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+TAG="dev-datomic-$(cat .version)"
+
+docker build -t $TAG .
+
+mkdir -p data
